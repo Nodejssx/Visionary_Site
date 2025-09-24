@@ -1,0 +1,93 @@
+/* AI Visionary Studio – Policy Pages Styles */
+:root {
+  --bg: #0e1116;
+  --panel: #0f141b;
+  --text: #e6edf3;
+  --muted: #9da7b3;
+  --brand: #7c5cff;
+  --brand-2: #00d4ff;
+  --border: #1b2430;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fafafa;
+    --panel: #ffffff;
+    --text: #0f1720;
+    --muted: #516173;
+    --brand: #6b4cff;
+    --brand-2: #00a6e6;
+    --border: #eaeef3;
+    --shadow: 0 18px 40px rgba(0,0,0,0.08);
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,0.18), transparent 50%),
+              radial-gradient(1000px 500px at -10% 20%, rgba(0,212,255,0.18), transparent 40%),
+              var(--bg);
+  line-height: 1.6;
+}
+
+.wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(160%) blur(8px);
+  background: color-mix(in oklab, var(--bg) 82%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.site-header .inner { display: flex; align-items: center; gap: 18px; padding: 14px 24px; max-width: 1100px; margin: 0 auto; }
+.brand {
+  font-weight: 700; letter-spacing: 0.2px; font-size: 16px;
+  color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+}
+.brand .gem { width: 22px; height: 22px; border-radius: 6px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: inset 0 0 20px rgba(255,255,255,0.18); }
+.nav { margin-left: auto; display: flex; gap: 14px; }
+.nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 14px; padding: 8px 10px; border-radius: 10px; }
+.nav a.active, .nav a:hover { color: var(--text); background: color-mix(in oklab, var(--panel) 86%, transparent); }
+
+.hero { padding: 52px 0 26px; text-align: left; }
+.eyebrow { color: var(--muted); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+h1.title { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 10px 0 8px; }
+.meta { color: var(--muted); font-size: 14px; }
+
+.panel {
+  background: color-mix(in oklab, var(--panel) 94%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.content { padding: 26px; }
+
+.content h2 { margin: 26px 0 10px; font-size: 20px; }
+.content h3 { margin: 22px 0 8px; font-size: 18px; }
+.content p { margin: 10px 0; }
+.content ul { margin: 8px 0 14px 22px; padding: 0; }
+.content li { margin: 6px 0; }
+.content code { background: color-mix(in oklab, var(--panel) 80%, transparent); border: 1px solid var(--border); padding: 2px 6px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.95em; }
+
+.callout {
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: color-mix(in oklab, var(--panel) 85%, transparent);
+  color: var(--muted);
+  margin: 14px 0;
+}
+
+.site-footer { color: var(--muted); font-size: 13px; text-align: center; padding: 40px 0 60px; }
+.site-footer a { color: var(--muted); }
+
+/* Small screens */
+@media (max-width: 640px) {
+  .content { padding: 18px; }
+  .nav { gap: 6px; }
+}
+
